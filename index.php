@@ -35,8 +35,8 @@
                     
                 }
                 public function winner ($token){ //check if there is a win
-                    $colCheck = true;
-                    $diagonalCheck = true;
+                    $col_check = true;
+                    $diagonal_check = true;
                     //check if there is a horizontal win
                     for($row=0; $row<3; $row++){
                         if(($this->position[3*$row]==$token) && ($this->position[3*$row+1]==$token) && ($this->position[3*$row+2]==$token)){
@@ -47,29 +47,29 @@
                     for($y = 0; $y < 3; $y++){
                         for($x = $y; $x < 9; $x+= 3){
                             if($this->position[$x] != $token){
-                                $colCheck = false;
+                                $col_check = false;
                             }
                         }
-                        if($colCheck){
+                        if($col_check){
                             return true;
                         }
                     }
                     //check for diagonal wins 
                     for($z = 0; $z < 9; $z+=4){
                          if($this->position[$z] != $token){
-                             $diagonalCheck = false;
+                             $diagonal_check = false;
                          }   
                     }
-                    if($diagonalCheck){
+                    if($diagonal_check){
                         return true;
                     }
-                    $diagonalCheck = true;
+                    $diagonal_check = true;
                     for($z = 2; $z < 7; $z+=2){
                         if($this->position[$z] != $token){
-                            $diagonalCheck = false;
+                            $diagonal_check = false;
                         }
                     }
-                    if($diagonalCheck){
+                    if($diagonal_check){
                         return true;
                     }
                     return false;
