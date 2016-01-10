@@ -25,7 +25,6 @@
                     echo 'No winner yet, but you are losing.'; 
                     $game->pick_move(); // no winner so the computer is picking a move 
                 }
-               
                 $game->display();
         }
             class Game{
@@ -75,7 +74,6 @@
                     }
                     return false;
                 }
-                
                 function display() {
                     echo "<table cols='3' style='fontsize:
                     large; fontweight:
@@ -90,8 +88,6 @@
                     echo '</tr>'; // close the last row
                     echo '</table>';
                 }
-                
-                
                 function show_cell($which) {
                     $token = $this->position[$which];// deal with the easy case
                     if($token<>'-'){
@@ -113,10 +109,7 @@
                         }
                     }
                 }
-
             }
-            
-           
         ?>   
     </body>
 </html>
